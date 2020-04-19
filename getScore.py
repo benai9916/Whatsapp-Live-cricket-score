@@ -47,6 +47,7 @@ class getScore:
             score_data =  resp.json()
 
             try:
+                # get the comment and score of the match
                 data =  'here is the score: \n' + score_data['stat']+'\n'+score_data['score']
             except KeyError as e:
                 print(e)
@@ -56,11 +57,12 @@ class getScore:
 if __name__ == "__main__":
     object_score = getScore()
     list_of_all_score = object_score.get_unique_id()
-    print(list_of_all_score)
 
+    # Sign in to twilio and get ACCOUNT-SID TOKEN and AUTH TOKEN
     from twilio.rest import Client
     a_sid = 'ACCOUNT-SID TOKEN'
     auth_toke = 'AUTH TOKEN'
 
     client = Client(a_sid, auth_toke)
+    # please add ypur number to receive a message
     message = client.messages.create(body=list_of_all_score, from_='whatsapp:+14155238886',to='whatsapp:+91YOUR-WHATSAPP-NUMBER')
