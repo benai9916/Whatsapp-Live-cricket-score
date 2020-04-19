@@ -1,7 +1,7 @@
 # Whatsapp-Live-cricket-score
 
 ## Description
-  This is a simple app where you can get the live score of cricket match in your whatapp.
+  This is a simple app where you can get live cricket match score to your whatapp number.
   
 ## Quick start
   clone the repository and install all the required package
